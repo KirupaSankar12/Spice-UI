@@ -1,0 +1,112 @@
+/* Using the theme from your landing page for consistency */
+:root {
+  --primary-color: #d35400;   /* Spicy orange */
+  --secondary-color: #2c3e50; /* Dark slate blue */
+  --success-green: #28a745;
+  --background-light: #fdf6f0;
+  --white-color: #ffffff;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+}
+
+.success-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background-light);
+  font-family: "Segoe UI", sans-serif;
+  padding: 20px;
+}
+
+.success-card {
+  background: var(--white-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  padding: 40px 50px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.success-card h1 {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  margin: 20px 0 10px;
+}
+
+.success-card p {
+  font-size: 1.1rem;
+  color: #6c757d;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.success-card button {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 12px 30px;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.success-card button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= SVG Checkmark Animation ================= */
+.checkmark-svg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 3;
+  stroke: var(--white-color);
+  stroke-miterlimit: 10;
+  margin: 0 auto;
+  box-shadow: inset 0px 0px 0px var(--success-green);
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  stroke: var(--success-green);
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 50px var(--success-green);
+  }
+}
