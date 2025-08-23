@@ -1,0 +1,173 @@
+/* Using the theme from your landing page for consistency */
+:root {
+  --primary-color: #d35400;   /* Spicy orange */
+  --secondary-color: #2c3e50; /* Dark slate blue */
+  --background-light: #f8f9fa;
+  --white-color: #ffffff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --border-radius: 16px;
+  --border-color: #e9ecef;
+}
+
+.edit-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background-light);
+  font-family: "Segoe UI", sans-serif;
+  padding: 40px;
+}
+
+.edit-card {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  background: var(--white-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* ================= Left Panel ================= */
+.info-panel {
+  flex-basis: 40%;
+  background: var(--secondary-color);
+  color: var(--white-color);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-header h3 {
+  font-weight: 600;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.info-header h1 {
+  font-size: 2.5rem;
+  margin: 10px 0 0 0;
+}
+
+.info-details {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-details p {
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+}
+
+.info-details strong {
+  opacity: 0.8;
+}
+
+.info-footer {
+  margin-top: auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+
+/* ================= Right Panel (Form) ================= */
+.form-panel {
+  flex-basis: 60%;
+  padding: 40px;
+}
+
+.form-panel form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.input-icon {
+  color: var(--primary-color);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(211, 84, 0, 0.15);
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .input-group {
+  flex: 1;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: auto; /* Pushes buttons to the bottom */
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.form-actions button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-cancel {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-save {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-save:hover {
+  opacity: 0.85;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 992px) {
+  .edit-card {
+    flex-direction: column;
+  }
+}

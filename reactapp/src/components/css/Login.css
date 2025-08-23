@@ -1,0 +1,189 @@
+/* --- 1. Import Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* --- Theme Variables --- */
+:root {
+  --primary-color: #e74c3c; /* A vibrant, friendly red-orange */
+  --secondary-color: #34495e; /* A softer dark blue */
+  --background-color: #f4f7f6; /* Soft off-white */
+  --text-color: #555;
+  --radius: 12px;
+  --transition: all 0.3s ease-in-out;
+}
+
+.light-login-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ================= Left Illustrative Panel ================= */
+.login-info-panel {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  color: white;
+  background-image: linear-gradient(135deg, #f39c12 0%, #e74c3c 100%);
+  text-align: left;
+}
+
+.info-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.info-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 500px;
+}
+
+/* ================= Right Form Panel ================= */
+.login-form-panel {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+}
+
+.login-card {
+  background: white;
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.login-logo {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  color: var(--primary-color);
+}
+
+/* ================= User/Admin Toggle ================= */
+.login-type-selector {
+  display: flex;
+  margin-bottom: 25px;
+  border-radius: var(--radius);
+  background-color: #f0f0f0;
+  padding: 5px;
+}
+
+.login-type-selector button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #888;
+  border-radius: 8px;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.login-type-selector button.active {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+}
+
+/* ================= Floating Label Inputs ================= */
+.floating-input-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.floating-input-group input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.floating-input-group label {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  color: #999;
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+.floating-input-group input:focus + label,
+.floating-input-group input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  font-size: 0.8rem;
+  padding: 0 5px;
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.floating-input-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: white;
+}
+
+/* ================= Submit Button & Link ================= */
+.login-submit-btn {
+  width: 100%;
+  padding: 15px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.login-submit-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+}
+
+.signup-link-text {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--text-color);
+}
+
+.signup-link-text a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 992px) {
+  .light-login-container {
+    flex-direction: column;
+  }
+  .login-info-panel {
+    display: none; /* Hide the info panel on smaller screens for a focused form */
+  }
+  .login-form-panel {
+    width: 100%;
+    padding: 20px;
+  }
+}
