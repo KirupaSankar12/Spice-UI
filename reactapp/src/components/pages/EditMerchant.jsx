@@ -25,7 +25,7 @@ function EditMerchant() {
     const fetchMerchantData = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await fetch(`http://localhost:8080/get/${id}`, {
+        const res = await fetch(`https://spice-backend-f6cq.onrender.com/get/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (res.ok) {
@@ -84,7 +84,7 @@ function EditMerchant() {
 
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:8080/put/${id}`, {
+      const res = await fetch(`https://spice-backend-f6cq.onrender.com/put/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
