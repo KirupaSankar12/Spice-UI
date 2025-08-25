@@ -48,7 +48,7 @@ function ApplyForm() {
 
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:8080/addSpiceMerchant", {
+      const res = await fetch("https://spice-backend-f6cq.onrender.com/addSpiceMerchant", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
