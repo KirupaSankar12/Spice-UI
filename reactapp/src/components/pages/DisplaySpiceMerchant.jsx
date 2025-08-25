@@ -13,7 +13,7 @@ function DisplaySpiceMerchant() {
   const fetchMerchants = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:8080/getAllSpiceMerchants", {
+      const res = await fetch("https://spice-backend-f6cq.onrender.com/getAllSpiceMerchants", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -38,7 +38,7 @@ function DisplaySpiceMerchant() {
     if (window.confirm("Are you sure you want to delete this application?")) {
       try {
         const token = localStorage.getItem("token");
-        await fetch(`http://localhost:8080/delete/${id}`, {
+        await fetch(`https://spice-backend-f6cq.onrender.com/delete/${id}`, {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -54,7 +54,7 @@ function DisplaySpiceMerchant() {
   const handleUpdateStatus = async (id, newStatus) => {
     try {
       const token = localStorage.getItem("token");
-      await fetch(`http://localhost:8080/updateStatus/${id}`, {
+      await fetch(`https://spice-backend-f6cq.onrender.com/updateStatus/${id}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
