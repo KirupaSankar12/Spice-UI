@@ -5,7 +5,7 @@ function AdminDashboard() {
   const [merchants, setMerchants] = useState([]);
 
   const fetchMerchants = async () => {
-    const res = await fetch("http://localhost:8080/getAllSpiceMerchants");
+    const res = await fetch("https://spice-backend-f6cq.onrender.com/getAllSpiceMerchants");
     const data = await res.json();
     setMerchants(data);
   };
@@ -13,25 +13,25 @@ function AdminDashboard() {
   useEffect(() => { fetchMerchants(); }, []);
 
   const handleApprove = async (id) => {
-    await fetch(`http://localhost:8080/merchants/${id}/approve`, { method: "PUT" });
+    await fetch(`https://spice-backend-f6cq.onrender.com/merchants/${id}/approve`, { method: "PUT" });
     toast.success("Merchant Approved ✅");
     fetchMerchants();
   };
 
   const handleReject = async (id) => {
-    await fetch(`http://localhost:8080/merchants/${id}/reject`, { method: "PUT" });
+    await fetch(`https://spice-backend-f6cq.onrender.com/merchants/${id}/reject`, { method: "PUT" });
     toast.error("Merchant Rejected ❌");
     fetchMerchants();
   };
 
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:8080/merchants/${id}`, { method: "DELETE" });
+    await fetch(`https://spice-backend-f6cq.onrender.com/merchants/${id}`, { method: "DELETE" });
     toast.warn("Merchant Deleted 🗑️");
     fetchMerchants();
   };
 
   const handleEdit = async (id, updatedData) => {
-    await fetch(`http://localhost:8080/merchants/${id}`, {
+    await fetch(`https://spice-backend-f6cq.onrender.com/merchants/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedData),
