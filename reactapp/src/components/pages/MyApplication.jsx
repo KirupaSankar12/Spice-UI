@@ -15,7 +15,7 @@ function MyApplications() {
         const fetchMyApplications = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await fetch("http://localhost:8080/my-applications", {
+                const res = await fetch("https://spice-backend-f6cq.onrender.com/my-applications", {
                     headers: { "Authorization": `Bearer ${token}` }
                 });
                 if (res.ok) {
