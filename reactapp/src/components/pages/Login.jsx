@@ -17,7 +17,7 @@ function Login({ onLogin }) {
     setIsLoading(true);
 
     try {
-      const res = await fetch("http://localhost:8080/auth/login", {
+      const res = await fetch("https://spice-backend-f6cq.onrender.com/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
